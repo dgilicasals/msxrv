@@ -7,8 +7,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -33,3 +31,12 @@ jobs:
         with:
           name: manual.html
           path: ./manual.html
+
+      - uses: docker://pandoc/core:2.9
+        with:
+          args:  -s manual.md --toc -o manual.pdf --metadata title="Manual de Usuario"
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: manual.pdf
+          path: ./manual.pdf
