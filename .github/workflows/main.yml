@@ -42,4 +42,4 @@ jobs:
           # Stage the file, commit and push
           git add manual.html
           git commit -m "Publish new Manual"
-          git push origin master          
+          git push          
