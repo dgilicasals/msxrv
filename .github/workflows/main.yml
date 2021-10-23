@@ -30,10 +30,9 @@ jobs:
         with:
           args:  -s manual.md --toc -o manual.pdf --metadata title="Manual de Usuario"
 
-      - uses: actions/upload-artifact@v2
+      - uses: docker://pandoc/latex:2.9
         with:
-          name: manual.html
-          path: ./manual.html
+          args:  -s manual.md --toc -o manual.epub --metadata title="Manual de Usuario"
 
       - name: setup git config
         run: |
@@ -44,5 +43,5 @@ jobs:
         run: |
           # Stage the file, commit and push
           git add .
-          git commit -m "Publish new Manual"
+          git commit -m "Publish new Manuals"
           git push          
