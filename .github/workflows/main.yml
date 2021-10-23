@@ -28,11 +28,11 @@ jobs:
 
       - uses: docker://pandoc/core:2.9
         with:
-          args:  -s manual.md --toc -o manual.pdf --metadata title="Manual de Usuario"
+          args:  -s manual.md --toc -o manual.epub --metadata title="Manual de Usuario"
 
       - uses: docker://pandoc/latex:2.9
         with:
-          args:  -s manual.md --toc -o manual.epub --metadata title="Manual de Usuario"
+          args:  -s manual.md --toc -o manual.pdf --metadata title="Manual de Usuario"
 
       - name: setup git config
         run: |
