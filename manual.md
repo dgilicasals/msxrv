@@ -1,4 +1,4 @@
-MANUAL DE PROGRAMACION
+MANUAL DE Programación
 
 **MSXVR**
 
